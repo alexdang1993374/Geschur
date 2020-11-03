@@ -23,6 +23,10 @@ let noFade = 0;
 
 let hat;
 let flex;
+let y;
+let m;
+let c;
+let a;
 
 // function sayItMonique() {
 //   let stunningAudio = new Audio("./sound/noBitch.wav")
@@ -46,6 +50,10 @@ function preload() {
   flex = loadImage(
     "../img/IMGBIN_strong-bads-cool-game-for-attractive-people-homestar-runner-the-brothers-chaps-png_3Z62e96k.png"
   );
+  y = loadImage("../img/y.png")
+  m = loadImage("../img/m.png")
+  c = loadImage("../img/c.png")
+  a = loadImage("../img/a.png")
   // mySound = loadSound("./sound/noBitch.wav")
 }
 
@@ -124,6 +132,22 @@ function draw() {
     image(flex, 20, 30, 400, 400);
   }
 
+  if (label === "y") {
+    image(y, 50, -30, 800, 800);
+  }
+
+  if (label === "m") {
+    image(m, 50, -30, 800, 800);
+  }
+
+  if (label === "c") {
+    image(c, 50, -30, 800, 800);
+  }
+
+  if (label === "a") {
+    image(a, 50, -30, 800, 800);
+  }
+
   // if (questionFade >= 0) {
   //   tint(255, questionFade)
   //   image(question, 20, 30, 200, 200);
@@ -143,10 +167,10 @@ function draw() {
   // }
 
   // Draw the label
-  fill(255);
-  textSize(16);
-  textAlign(CENTER);
-  text(label, width / 2, height - 4);
+  // fill(255);
+  // textSize(16);
+  // textAlign(CENTER);
+  // text(label, width / 2, height - 4);
 }
 
 // Get a prediction for the current video frame
