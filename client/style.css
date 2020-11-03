@@ -20,21 +20,32 @@ body {
 
 h1 {
   margin-top: 20px;
-	line-height: 1em;
+  line-height: 1em;
+  font-size: 50px;
 }
 
 h2 {
 	line-height: 1em;
-	font-size: 1em;
+	font-size: 25px;
 }
 
-img {
-    width: 24%;
-    height: 200px;
-    border-radius: 10px;
-    cursor: pointer;
+p {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 25px;
 }
 
 input {
   margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+.gesture-info {
+  display: flex;
+  justify-content: center;
+}
+
+select {
+  margin-right: 10px;
 }
