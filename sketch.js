@@ -1,7 +1,7 @@
 // Classifier Variable
 let classifier;
 // Model URL
-let imageModelURL = "./Machinemodel/";
+let imageModelURL = "./machinemodel/";
 let header;
 // Video
 let video;
