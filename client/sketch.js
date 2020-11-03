@@ -29,17 +29,6 @@ let c;
 let a;
 let p;
 
-let newFile;
-
-// function sayItMonique() {
-//   let stunningAudio = new Audio("./sound/noBitch.wav")
-//   stunningAudio.play()
-//   noLoop()
-//   loop()
-// }
-
-let mySound;
-
 // Load the model first
 function preload() {
   // soundFormats(".wav")
@@ -60,12 +49,6 @@ function preload() {
 }
 
 function setup() {
-  // createCanvas(1080, 720);
-  // // Create the video
-  // video = createCapture(VIDEO);
-  // video.size(1080, 700);
-  // video.hide();
-
   const maxWidth = Math.min(windowWidth, windowHeight);
   pixelDensity(1);
   outputWidth = maxWidth;
@@ -84,7 +67,7 @@ function setup() {
   // Start classifying
   classifyVideo();
   p = createP("You can even change the images of the gestures! Try it out!");
-  p.attribute("class", "bottomText")
+  p.attribute("class", "bottomText");
   const sel = createSelect();
   const selectList = [
     "One hand up",
@@ -104,7 +87,6 @@ function setup() {
   sel.attribute("onchange", "scrollMenu()");
   input = createElement("input");
   input.attribute("type", "file");
-  // input.attribute("onchange", changeFile(document.getElementsByTagName("select")[0].value))
 }
 
 function draw() {
@@ -113,9 +95,6 @@ function draw() {
   tint(255);
   image(flippedVideo, 0, 0);
 
-  // if (document.getElementsByTagName("input")[0].files[0] && label === "Question") {
-  //   image(question, 20, 30, 200, 200);
-  // }
   if (label === "One hand up") {
     image(question, 20, 30, 400, 400);
   }

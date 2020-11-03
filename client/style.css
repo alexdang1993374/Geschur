@@ -12,10 +12,14 @@ canvas {
 body {
   margin: 0;
   padding: 0;
-	text-align: center;
-	font-family: 'Kalam', cursive;
-	background: #dfbcff;
-	background: radial-gradient(circle, rgba(223,188,255,1) 8%, rgba(255,245,245,1) 100%);
+  text-align: center;
+  font-family: "Kalam", cursive;
+  background: #dfbcff;
+  background: radial-gradient(
+    circle,
+    rgba(223, 188, 255, 1) 8%,
+    rgba(255, 245, 245, 1) 100%
+  );
 }
 
 h1 {
@@ -26,8 +30,8 @@ h1 {
 }
 
 h2 {
-	line-height: 1em;
-	font-size: 25px;
+  line-height: 1em;
+  font-size: 25px;
 }
 
 p {
@@ -40,7 +44,6 @@ input {
   /* margin-top: 30px; */
   margin-bottom: 30px;
 }
-
 
 .gesture-info {
   display: flex;
