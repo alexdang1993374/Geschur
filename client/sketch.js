@@ -37,11 +37,11 @@ let mySound;
 function preload() {
   // soundFormats(".wav")
   classifier = ml5.imageClassifier(imageModelURL + 'model.json');
-  question = loadImage("./img/question.png")
-  yes = loadImage("./img/yes.png")
-  no = loadImage("./img/no.png")
-  hat = loadImage("./img/kisspng-straw-hat-cap-cowboy-hat-sun-hat-raffia-hat-png-file-5a7164bd8da9e1.6508958715173807975803.png")
-  flex = loadImage("./img/IMGBIN_strong-bads-cool-game-for-attractive-people-homestar-runner-the-brothers-chaps-png_3Z62e96k.png")
+  question = loadImage("../img/question.png")
+  yes = loadImage("../img/yes.png")
+  no = loadImage("../img/no.png")
+  hat = loadImage("../img/kisspng-straw-hat-cap-cowboy-hat-sun-hat-raffia-hat-png-file-5a7164bd8da9e1.6508958715173807975803.png")
+  flex = loadImage("../img/IMGBIN_strong-bads-cool-game-for-attractive-people-homestar-runner-the-brothers-chaps-png_3Z62e96k.png")
   // mySound = loadSound("./sound/noBitch.wav")
 }
 
