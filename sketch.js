@@ -1,7 +1,7 @@
 // Classifier Variable
 let classifier;
 // Model URL
-let imageModelURL = "https://teachablemachine.withgoogle.com/models/DTvqHq4AT/";
+let imageModelURL = "./Machinemodel/";
 let header;
 // Video
 let video;
@@ -64,7 +64,7 @@ function setup() {
   video.hide();
 
   flippedVideo = ml5.flipImage(video);
-  // Start classifying
+  // // Start classifying
   classifyVideo();
   p = createP("You can even change the images of the gestures! Try it out!");
   p.attribute("class", "bottomText");
@@ -144,6 +144,7 @@ function draw() {
 function classifyVideo() {
   flippedVideo = ml5.flipImage(video);
   classifier.classify(flippedVideo, gotResult);
+  flippedVideo.remove();
 }
 
 // When we get a result
