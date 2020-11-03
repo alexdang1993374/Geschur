@@ -6,5 +6,15 @@ This app uses machine learning to read what gestures users are making on their c
 
 Geschur was made using Teachable Machine, ml5.js, and p5.js.
 
-To start app:
+## To start the app:
+
+### Run
+
+### `npm install -g live-server`
+
+### Then run 
+
+### `live-server`
+
+Open localhost:8080 to open the app in the browser.
 

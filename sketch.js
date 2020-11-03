@@ -33,19 +33,19 @@ let p;
 function preload() {
   // soundFormats(".wav")
   classifier = ml5.imageClassifier(imageModelURL + "model.json");
-  question = loadImage("../img/question.png");
-  yes = loadImage("../img/yes.png");
-  no = loadImage("../img/no.png");
+  question = loadImage("./img/question.png");
+  yes = loadImage("./img/yes.png");
+  no = loadImage("./img/no.png");
   cute = loadImage(
-    "../img/kisspng-straw-hat-cap-cowboy-hat-sun-hat-raffia-hat-png-file-5a7164bd8da9e1.6508958715173807975803.png"
+    "./img/kisspng-straw-hat-cap-cowboy-hat-sun-hat-raffia-hat-png-file-5a7164bd8da9e1.6508958715173807975803.png"
   );
   flex = loadImage(
-    "../img/IMGBIN_strong-bads-cool-game-for-attractive-people-homestar-runner-the-brothers-chaps-png_3Z62e96k.png"
+    "./img/IMGBIN_strong-bads-cool-game-for-attractive-people-homestar-runner-the-brothers-chaps-png_3Z62e96k.png"
   );
-  y = loadImage("../img/y.png");
-  m = loadImage("../img/m.png");
-  c = loadImage("../img/c.png");
-  a = loadImage("../img/a.png");
+  y = loadImage("./img/y.png");
+  m = loadImage("./img/m.png");
+  c = loadImage("./img/c.png");
+  a = loadImage("./img/a.png");
 }
 
 function setup() {
