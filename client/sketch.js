@@ -1,7 +1,7 @@
 // Classifier Variable
 let classifier;
 // Model URL
-let imageModelURL = "https://teachablemachine.withgoogle.com/models/l7PUc4bBq/";
+let imageModelURL = "https://teachablemachine.withgoogle.com/models/DTvqHq4AT/";
 let header;
 // Video
 let video;
@@ -21,12 +21,15 @@ let yesFade = 0;
 let no;
 let noFade = 0;
 
-let hat;
+let cute;
 let flex;
 let y;
 let m;
 let c;
 let a;
+let p;
+
+let newFile;
 
 // function sayItMonique() {
 //   let stunningAudio = new Audio("./sound/noBitch.wav")
@@ -44,17 +47,16 @@ function preload() {
   question = loadImage("../img/question.png");
   yes = loadImage("../img/yes.png");
   no = loadImage("../img/no.png");
-  hat = loadImage(
+  cute = loadImage(
     "../img/kisspng-straw-hat-cap-cowboy-hat-sun-hat-raffia-hat-png-file-5a7164bd8da9e1.6508958715173807975803.png"
   );
   flex = loadImage(
     "../img/IMGBIN_strong-bads-cool-game-for-attractive-people-homestar-runner-the-brothers-chaps-png_3Z62e96k.png"
   );
-  y = loadImage("../img/y.png")
-  m = loadImage("../img/m.png")
-  c = loadImage("../img/c.png")
-  a = loadImage("../img/a.png")
-  // mySound = loadSound("./sound/noBitch.wav")
+  y = loadImage("../img/y.png");
+  m = loadImage("../img/m.png");
+  c = loadImage("../img/c.png");
+  a = loadImage("../img/a.png");
 }
 
 function setup() {
@@ -81,6 +83,8 @@ function setup() {
   flippedVideo = ml5.flipImage(video);
   // Start classifying
   classifyVideo();
+  p = createP("You can even change the images of the gestures! Try it out!");
+  p.attribute("class", "bottomText")
   const sel = createSelect();
   const selectList = [
     "One hand up",
@@ -93,12 +97,14 @@ function setup() {
     "C",
     "A",
   ];
-  sel.option("Select Gesture")
+  sel.option("Select Gesture");
   for (let i = 0; i < selectList.length; i++) {
-    sel.option(selectList[i])
+    sel.option(selectList[i]);
   }
+  sel.attribute("onchange", "scrollMenu()");
   input = createElement("input");
   input.attribute("type", "file");
+  // input.attribute("onchange", changeFile(document.getElementsByTagName("select")[0].value))
 }
 
 function draw() {
@@ -110,61 +116,43 @@ function draw() {
   // if (document.getElementsByTagName("input")[0].files[0] && label === "Question") {
   //   image(question, 20, 30, 200, 200);
   // }
-  if (label === "hand up") {
+  if (label === "One hand up") {
     image(question, 20, 30, 400, 400);
   }
 
-  if (label === "Thumbs up") {
+  if (label === "Two thumbs up") {
     yesFade = 255;
     image(yes, 20, 30, 400, 400);
   }
 
-  if (label === "Thumbs down") {
+  if (label === "Two thumbs down") {
     noFade = 255;
     image(no, 20, 30, 400, 400);
   }
 
-  if (label === "cute") {
-    image(hat, 75, -150, 650, 650);
+  if (label === "Hands under chin") {
+    image(cute, 75, -150, 650, 650);
   }
 
-  if (label === "flex") {
+  if (label === "Flex") {
     image(flex, 20, 30, 400, 400);
   }
 
-  if (label === "y") {
+  if (label === "Y") {
     image(y, 50, -30, 800, 800);
   }
 
-  if (label === "m") {
+  if (label === "M") {
     image(m, 50, -30, 800, 800);
   }
 
-  if (label === "c") {
+  if (label === "C") {
     image(c, 50, -30, 800, 800);
   }
 
-  if (label === "a") {
+  if (label === "A") {
     image(a, 50, -30, 800, 800);
   }
-
-  // if (questionFade >= 0) {
-  //   tint(255, questionFade)
-  //   image(question, 20, 30, 200, 200);
-  //   questionFade -= 10
-  // }
-
-  // if (yesFade > 0) {
-  //   tint(255, yesFade)
-  //   image(yes, 20, 30, 200, 200);
-  //   yesFade -= 10;
-  // }
-
-  // if (noFade > 0) {
-  //   tint(255, noFade)
-  //   image(no, 20, 30, 200, 200);
-  //   noFade -= 10;
-  // }
 
   // Draw the label
   // fill(255);
@@ -186,13 +174,81 @@ function gotResult(error, results) {
     console.error(error);
     return;
   }
-  // The results are in an array ordered by confidence.
-  // if (document.getElementsByTagName("input")[0].files[0]) {
 
-  //   question = "./img/" + document.getElementsByTagName("input")[0].files[0].name
-  //   console.log(question);
-  // }
+  // The results are in an array ordered by confidence.
   label = results[0].label;
+
   // Classifiy again!
   classifyVideo();
+}
+
+function changeFile(gesture) {
+  const file = document.querySelector("input[type=file]").files[0];
+  const reader = new FileReader();
+
+  reader.addEventListener(
+    "load",
+    function () {
+      // convert image file to base64 string
+      if (gesture === "Flex") {
+        flex = loadImage(reader.result);
+        alert(`You changed the image for ${gesture}!`);
+      }
+
+      if (gesture === "Hands under chin") {
+        flex = loadImage(reader.result);
+        alert(`You changed the image for ${gesture}!`);
+      }
+
+      if (gesture === "Y") {
+        y = loadImage(reader.result);
+        alert(`You changed the image for ${gesture}!`);
+      }
+
+      if (gesture === "M") {
+        m = loadImage(reader.result);
+        alert(`You changed the image for ${gesture}!`);
+      }
+
+      if (gesture === "C") {
+        c = loadImage(reader.result);
+        alert(`You changed the image for ${gesture}!`);
+      }
+
+      if (gesture === "A") {
+        a = loadImage(reader.result);
+        alert(`You changed the image for ${gesture}!`);
+      }
+
+      if (gesture === "One hand up") {
+        question = loadImage(reader.result);
+        alert(`You changed the image for ${gesture}!`);
+      }
+
+      if (gesture === "Two thumbs up") {
+        yes = loadImage(reader.result);
+        alert(`You changed the image for ${gesture}!`);
+      }
+
+      if (gesture === "Two thumbs down") {
+        no = loadImage(reader.result);
+        alert(`You changed the image for ${gesture}!`);
+      }
+    },
+    false
+  );
+
+  if (file) {
+    reader.readAsDataURL(file);
+    console.log(reader.readAsDataURL(file));
+  }
+}
+
+function scrollMenu() {
+  if (document.getElementsByTagName("select")[0].value !== "Select Gesture") {
+    input.attribute(
+      "onchange",
+      `changeFile(document.getElementsByTagName("select")[0].value)`
+    );
+  }
 }
