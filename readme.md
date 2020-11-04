@@ -6,6 +6,8 @@ This app uses machine learning to read what gestures users are making on their c
 
 Geschur was made using Teachable Machine, ml5.js, and p5.js.
 
+Go to geschur.herokuapp.com to see Geschur in action!
+
 ## To start the app:
 
 ### Run
