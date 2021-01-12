@@ -5,7 +5,7 @@
 This app uses machine learning to read what gestures users are making on their cameras and overlays images ontop of their video feed. Users can also upload their own images for the gestures.
 
 <h1 id="user_guide">User Guide</h1>
-Go to geschur.herokuapp.com to see Geschur in action!
+Go to <a href="https://geschur.herokuapp.com/">geschur.herokuapp.com</a> to see Geschur in action!
 
 ## To start the app:
 
